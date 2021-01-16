@@ -1,0 +1,108 @@
+misha@pogorelov:~/Рабочий стол$ cd ~
+misha@pogorelov:~$ mkdir LABRAB
+misha@pogorelov:~$ cd LABRAB
+misha@pogorelov:~/LABRAB$ mkdir A2
+misha@pogorelov:~/LABRAB$ mkdir A1
+misha@pogorelov:~/LABRAB$ cd A1
+misha@pogorelov:~/LABRAB/A1$ mkdir B1
+misha@pogorelov:~/LABRAB/A1$ mkdir B2
+misha@pogorelov:~/LABRAB/A1$ mkdir C2
+misha@pogorelov:~/LABRAB/A1$ cd B1
+misha@pogorelov:~/LABRAB/A1/B1$ mkdir C1
+misha@pogorelov:~/LABRAB/A1/B1$ cd C1
+misha@pogorelov:~/LABRAB/A1/B1/C1$ touch text1.txt
+misha@pogorelov:~/LABRAB/A1/B1/C1$ touch text2.txt
+misha@pogorelov:~/LABRAB/A1/B1/C1$ cd LABRAB/A1/C2
+bash: cd: LABRAB/A1/C2: Нет такого файла или каталога
+misha@pogorelov:~/LABRAB/A1/B1/C1$ cd LABRAB/A1/C2
+bash: cd: LABRAB/A1/C2: Нет такого файла или каталога
+misha@pogorelov:~/LABRAB/A1/B1/C1$ cd LABRAB
+bash: cd: LABRAB: Нет такого файла или каталога
+misha@pogorelov:~/LABRAB/A1/B1/C1$ cd ~
+misha@pogorelov:~$ cd LABRAB/A1/C2
+misha@pogorelov:~/LABRAB/A1/C2$ touch ex.doc
+misha@pogorelov:~/LABRAB/A1/C2$ cat ~/LABRAB/A1/B1/C1/text1.txt ~/LABRAB/A1/B1/C1/text2.txt ~/LABRAB/A1/C2/ex.doc
+misha@pogorelov:~/LABRAB/A1/C2$ cat ~/LABRAB/A1/B1/C1/text1.txt ~/LABRAB/A1/B1/C1/text2.txt ~/LABRAB/A1/C2/ex.doc > ~/LABRAB/my.dat
+misha@pogorelov:~/LABRAB/A1/C2$ cd LABRAB
+bash: cd: LABRAB: Нет такого файла или каталога
+misha@pogorelov:~/LABRAB/A1/C2$ cd ~/LABRAB
+misha@pogorelov:~/LABRAB$ cat > my.dat
+1234567890-^Z
+[1]+ Остановлен cat > my.dat
+misha@pogorelov:~/LABRAB$ cd ~/LABRAB/A1/B1/C1
+misha@pogorelov:~/LABRAB/A1/B1/C1$ rename 's.\.txt$/.cpp/' *.txt
+Substitution replacement not terminated at (user-supplied code).
+misha@pogorelov:~/LABRAB/A1/B1/C1$ ls
+text1.txt text2.txt
+misha@pogorelov:~/LABRAB/A1/B1/C1$ rename 's.\.txt/.cpp/' *.txt
+Substitution replacement not terminated at (user-supplied code).
+misha@pogorelov:~/LABRAB/A1/B1/C1$ sudo rename 's.\.txt/.cpp/' *.txt
+[sudo] пароль для misha:
+Substitution replacement not terminated at (user-supplied code).
+misha@pogorelov:~/LABRAB/A1/B1/C1$ sudo apt-get install rename
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Уже установлен пакет rename самой новой версии (1.10-1).
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 193 пакетов не обновлено.
+misha@pogorelov:~/LABRAB/A1/B1/C1$ sudo apt -get update
+E: Параметр командной строки «g» [из -get] непонятен в комбинации с другими параметрами.
+misha@pogorelov:~/LABRAB/A1/B1/C1$ sudo apt-get update
+Сущ:1 http://linux.teamviewer.com/deb stable InRelease
+Сущ:2 http://dl.google.com/linux/chrome/deb stable InRelease
+Сущ:3 http://download.opensuse.org/repositories/home:/steve.. InRelease
+Сущ:4 http://security.debian.org/debian-security buster/updates InRelease
+Сущ:5 http://deb.debian.org/debian buster InRelease
+Игн:6 http://www.tataranovich.com/debian buster InRelease
+Сущ:7 http://deb.debian.org/debian buster-updates InRelease
+Пол:8 http://www.tataranovich.com/debian buster Release [31,7 kB]
+Сущ:9 http://www.deb-multimedia.org buster InRelease
+Игн:10 https://ookla.bintray.com/debian buster InRelease
+Пол:11 http://www.tataranovich.com/debian buster Release.gpg [488 B]
+Пол:12 https://ookla.bintray.com/debian buster Release [4 387 B]
+Игн:11 http://www.tataranovich.com/debian buster Release.gpg
+Can't open file /var/lib/apt/lists/_run_live_medium_dists_buster_main_binary-amd64_Packages: No such file or directory
+Чтение списков пакетов… Готово
+N: Пропускается получение настроенного файла «main/binary-i386/Packages», так как репозиторий «http://dl.google.com/linux/chrome/deb stable InRelease» не поддерживает архитектуру «i386»
+W: Ошибка GPG: http://www.tataranovich.com/debian buster Release: Следующие подписи неверны: EXPKEYSIG 836CC41976FB442E Tataranovich.com APT Repository <pkg-master@tataranovich.com>
+E: Репозиторий «http://www.tataranovich.com/debian buster Release» не подписан.
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной
+Error 404 (Not Found)!!1
+dl.google.com
+Index of /debian-security
+security.debian.org
+Index of /debian
+ftp.debian.org
+ 
+странице apt-secure(8).
+E: Problem executing scripts APT::Update::Post-Invoke-Success 'test -x /usr/bin/apt-show-versions || exit 0 ; apt-show-versions -i'
+E: Sub-process returned an error code
+misha@pogorelov:~/LABRAB/A1/B1/C1$ sudo rename 's.\.txt/.cpp/' *.txt
+Substitution replacement not terminated at (user-supplied code).
+misha@pogorelov:~/LABRAB/A1/B1/C1$ mv text1.txt text1.cpp
+misha@pogorelov:~/LABRAB/A1/B1/C1$ mv text2.txt text2.cpp
+misha@pogorelov:~/LABRAB/A1/B1/C1$ cd ~/LABRAB
+misha@pogorelov:~/LABRAB$ more my.dat
+misha@pogorelov:~/LABRAB$ ls
+A1 A2 my.dat
+misha@pogorelov:~/LABRAB$ nani my.date
+bash: nani: команда не найдена
+misha@pogorelov:~/LABRAB$ nano my.dat
+misha@pogorelov:~/LABRAB$ more my.dat
+12234567890-
+misha@pogorelov:~/LABRAB$ tree
+.
+├── A1
+│ ├── B1
+│ │ └── C1
+│ │ ├── text1.cpp
+│ │ └── text2.cpp
+│ ├── B2
+│ └── C2
+│ └── ex.doc
+├── A2
+└── my.dat
+
+6 directories, 4 files
+misha@pogorelov:~/LABRAB$
